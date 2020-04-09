@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome to Exotic Car Rental</h1>
+
+<form method="post" th:action="@{/booking}" >
+<select id="carList" name="carList"   required>
+        <option disabled selected value="movie">Available Cars</option>
+        <option th:each="car : ${carList}"
+                th:value="${car.name}+' , '+${car.dailyCharge}"
+                th:text="${car.name}+' : '+${car.dailyCharge}"></option>
+    </select>
+    <label> Start Date </label>
+<input type = "date"  required>
+<label> End Date </label>
+<input type = "date"  >
+<input type=submit>
+   
+</form>
+</body>
+</html>
