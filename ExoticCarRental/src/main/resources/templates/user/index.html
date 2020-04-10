@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exotic Car Rentals</title>
+<link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+	<nav>
+		<div>
+			<a href="/" th:href="@{/}" class="logo">EXOTIC CAR RENTALS</a>
+		</div>
+		<div class="nav-content">
+			<div sec:authorize="!isAuthenticated()">
+				<a href="/login" th:href="@{/login}">Account</a>
+			</div>
+			<div sec:authorize="isAuthenticated()" class="dropdown">
+				<i class='fas fa-user' style='color: #eee'></i><span
+					sec:authentication="name" class="dropbtn"></span> <span
+					class="dropdown-content"> <a href="#" th:href="@{/logout}"
+					class="button">Logout</a>
+				</span>
+			</div>
+			<div>
+				<a href="/ContactUs" th:href="@{/ContactUs}">Contact Us</a>
+			</div>
+		</div>
+	</nav>
+	<header class="homepage">
+		<form method="post" th:action="@{/booking}" class="bookingForm">
+			<h2>Search for a Car Rental</h2>
+			<br> <br>
+			<div class="row">
+				<div>
+					<label>Pick-up location</label><br>
+					<select id="locations"
+						name="locations" required>
+						<option></option>
+						<option>Toronto,ON</option>
+						<option>Brampton, ON</option>
+						<option>Mississauaga, ON</option>
+						<!-- 	<option th:each="car : ${carList}"
+				th:value="${car.name}+' , '+${car.dailyCharge}"
+				th:text="${car.name}+' : '+${car.dailyCharge}"></option> -->
+					</select>
+				</div>
+				<div>
+					<label> Pick-up Date </label><br> 
+					<input type="date" required>
+				</div>
+				<div>
+					<label> Drop-off Date </label><br> 
+					<input type="date" required>
+				</div>
+				<div>
+					<input type="submit" value="Search">
+				</div>
+			</div>
+		</form>
+	</header>
+
+
+
+</body>
+</html>

@@ -1,5 +1,15 @@
 package com.prog39599.repositories;
 
-public class CarRepository {
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.prog39599.beans.Car;
+
+public interface CarRepository extends JpaRepository<Car, Long> {
+
+	List<Car> findByMakeLike(String string);
+
+	
 
 }

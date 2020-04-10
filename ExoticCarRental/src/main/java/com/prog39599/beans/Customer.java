@@ -34,9 +34,21 @@ public class Customer {
 	private String username;
 	@NonNull
 	private String encryptedPassword;
+	@NonNull
+	private String fName;
+	@NonNull
+	private String lName;
+	@NonNull
+	private String address;
+	@NonNull
+	private Long phoneNumber;
+	@NonNull
+	private Byte enabled;
 	
-	@OneToMany
-	private List<RentalOrder> rentalOrderList;
+//	@OneToMany
+//	private List<RentalOrder> rentalOrderList;
+	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Roles> roles = new ArrayList<Roles>();
 	
 	
 	

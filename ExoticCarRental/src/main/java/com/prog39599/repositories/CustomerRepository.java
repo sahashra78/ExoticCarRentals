@@ -6,4 +6,6 @@ import com.prog39599.beans.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
+	Customer findByUsername(String username);
+
 }
