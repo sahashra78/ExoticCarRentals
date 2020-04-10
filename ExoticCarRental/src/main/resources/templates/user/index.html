@@ -34,8 +34,7 @@
 			<br> <br>
 			<div class="row">
 				<div>
-					<label>Pick-up location</label><br>
-					<select id="locations"
+					<label>Pick-up location</label><br> <select id="locations"
 						name="locations" required>
 						<option></option>
 						<option>Toronto,ON</option>
@@ -47,20 +46,30 @@
 					</select>
 				</div>
 				<div>
-					<label> Pick-up Date </label><br> 
-					<input type="date" required>
+					<label> Pick-up Date </label><br> <input type="date" required>
 				</div>
 				<div>
-					<label> Drop-off Date </label><br> 
-					<input type="date" required>
+					<label> Drop-off Date </label><br> <input type="date" required>
 				</div>
 				<div>
-					<input type="submit" value="Search">
+					<input type="submit" value="Search" class="button">
 				</div>
 			</div>
 		</form>
 	</header>
-
+	<section>
+		<div class="brandGrid">
+			<div><a href="" th:href="@{/findByMake/Audi}"><img src="/./Images/Logos/AudiLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/BMW}"><img src="/./Images/Logos/BMWLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Bugatti}"><img src="/./Images/Logos/BugattiLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Ferrari}"><img src="/./Images/Logos/FerrariLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Lamborghini}"><img src="/./Images/Logos/LamborghiniLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Mercedes}"><img src="/./Images/Logos/MercedesLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Porsche}"><img src="/./Images/Logos/PorscheLogo.png" class="brandLogo"></a></div>
+			<div><a href="" th:href="@{/findByMake/Tesla}"><img src="/./Images/Logos/TeslaLogo.png" class="brandLogo"></a></div>
+			
+		</div>
+	</section>
 
 
 </body>

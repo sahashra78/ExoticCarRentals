@@ -37,9 +37,6 @@ public class Car {
 	private int year;
 	@NonNull
 	private double dailyCharge;
-
-	
-	
-	
-	
+	@NonNull
+	private String image;
 }

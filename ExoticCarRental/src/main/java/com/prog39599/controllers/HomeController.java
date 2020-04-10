@@ -39,10 +39,10 @@ public class HomeController {
 		return "user/book";
 	}
 
-	@GetMapping("/findByMake")
-	public String findByMake(@RequestParam String make, Model model) {
+	@GetMapping("/findByMake/{make}")
+	public String findByMake(@PathVariable String make, Model model) {
 		List<Car> car = carRepository.findByMakeLike("%" + make + "%");
-		model.addAttribute("car", car);
+		model.addAttribute("carByMake", car);
 		return "user/searchCar";
 	}
 
@@ -124,7 +124,7 @@ public class HomeController {
 		return "admin/admin";
 	}
 	@GetMapping("/deleteCar/{id}")
-	public String deleteMovie(@PathVariable Long id, Model model) {
+	public String deleteCar(@PathVariable Long id, Model model) {
 		carRepository.deleteById(id);
 		model.addAttribute("carList", carRepository.findAll());
 		model.addAttribute("car", new Car());
