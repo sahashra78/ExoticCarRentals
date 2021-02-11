@@ -1,4 +1,5 @@
-#Spring Boot Web App
+# Spring Boot Web App
+
 ExoticCarRentals is an Web Application for renting exotic cars.
 Academic Project build for Advanced Java Framework Course.
 
